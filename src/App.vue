@@ -12,17 +12,40 @@
                 <img src = "@/assets/icons/down.svg" class = "arrow">
 
         </div>
-      <div class = "section_void">
-        <h3>AAA</h3>
 
-      </div>
       <div class = "section_main">
-        <h1>Aaaa</h1>
+       
+          <div id="app">
+              <v-carusel
+                :carusel_data="sliderItems"
+              />
+          </div>
       </div>
         </div>
     </div>
 </template>
 
+<script>
+import vCarusel from './components/v-carusel'
+
+export default{
+  name: 'app',
+  components: {
+    vCarusel
+  },
+  data() {
+    return {
+      sliderItems: [
+        { id: 1, name: 'witch', img: 'witch_card.jpg'},
+        { id: 2, name: 'img2', img: 'witch_card1.jpg'},
+        { id: 3, name: 'img3', img: 'witch_card2.jpg'},
+        
+      ]
+    }
+  },
+}
+
+</script>
 
 
 <style lang="scss">
@@ -42,6 +65,15 @@ body {
   object-fit: cover;
   margin: 0;
 }
+
+#app {
+  font-family: Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: greyscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 50vh;
+  }
 
 .background {
   font-weight: bold;
@@ -147,14 +179,11 @@ body {
   }
 }
 
-.section_void {
-  margin-top: 80vh;
-  scroll-margin-block-end: inherit;
-}
 
 .section_main {
-  margin-top: 100vh;
+  margin-top: 85vh;
   scroll-margin-block-end: inherit;
+
 }
 
 </style>
